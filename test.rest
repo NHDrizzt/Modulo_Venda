@@ -1,0 +1,60 @@
+GET http://localhost:3333/api/
+Content-Type: application/json
+###
+POST http://localhost:3333/api/createUser
+Content-Type: application/json
+
+{
+    "nome" : "Zezin",
+    "email" : "rokol@hotmail.com",
+    "senha" : 123456
+}
+
+
+###
+POST http://localhost:3333/api/login
+Content-Type: application/json
+
+{
+    "email" : "rokol@hotmail.com",
+    "senha" : 123456
+}
+
+###
+
+GET http://localhost:3333/api/listar
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJva29sQGhvdG1haWwuY29tIiwibm9tZSI6IlplemluIiwiaWF0IjoxNjAzNDAwNzcyLCJleHAiOjE2MDM0MDQzNzJ9.i4XH0IMlVKjJd_elK9X3IaqWy8YUmipOx4Yb6kqNGEo
+
+###
+POST http://localhost:3333/api/addCarrinho
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJva29sQGhvdG1haWwuY29tIiwibm9tZSI6IlplemluIiwiaWF0IjoxNjAzNDAwNzcyLCJleHAiOjE2MDM0MDQzNzJ9.i4XH0IMlVKjJd_elK9X3IaqWy8YUmipOx4Yb6kqNGEo
+
+{
+    "idEstoque" : 1,
+    "usuario_id": 2,
+    "quantidade" : 100,
+    "idProduto": 1
+}
+
+###
+POST http://localhost:3333/api/FinalizarCompra
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJva29sQGhvdG1haWwuY29tIiwibm9tZSI6IlplemluIiwiaWF0IjoxNjAzMjYxMjc2LCJleHAiOjE2MDMyNjQ4NzZ9.u6vft5eXCMZtutuPo7k7lcKX99pDbCNRomWb8kJ5hmQ
+
+{
+    "usuario_id": 2,
+    "produto_idProduto": 2,
+    "carrinho_de_compras_id": 6,
+    "tipo_pagamento": "Cartao"
+}
+
+###
+DELETE http://localhost:3333/api/DeletarItemCarrinho
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJva29sQGhvdG1haWwuY29tIiwibm9tZSI6IlplemluIiwiaWF0IjoxNjAzMDYxMDQ5LCJleHAiOjE2MDMwNjQ2NDl9.PX_1p7n5JAhHr2O3IhYEF41abhYOe1KJHZKOCE0Pt1A
+
+{
+    "iditem_carrinho": 7,
+}
